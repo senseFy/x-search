@@ -1,0 +1,50 @@
+{
+  "name": "@sensef/x-search-mcp",
+  "version": "0.2.0",
+  "description": "Minimal MCP server that exposes X (Twitter) search to any MCP client, powered by xAI's agentic x_search tool.",
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "x",
+    "twitter",
+    "search",
+    "xai",
+    "grok"
+  ],
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "bin": {
+    "x-search-mcp": "dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/senseFy/x-search-mcp.git"
+  },
+  "homepage": "https://github.com/senseFy/x-search-mcp#readme",
+  "bugs": {
+    "url": "https://github.com/senseFy/x-search-mcp/issues"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "smoke": "node dist/index.js --smoke",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "undici": "^7.29.0",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "^5.9.0"
+  }
+}
