@@ -50,6 +50,11 @@ codex mcp add x-search --env XAI_API_KEY=xai-... -- npx -y @sensef/x-search-mcp
 claude mcp add x-search --env XAI_API_KEY=xai-... -- npx -y @sensef/x-search-mcp
 ```
 
+> If `XAI_API_KEY` is already exported in the shell that launches your MCP
+> client, drop `--env XAI_API_KEY=xai-...` (and the `"env"` block below). The
+> child process inherits the parent environment. You only need `--env` for GUI
+> launches, CI, or pinning a different key per server.
+
 ### Claude Desktop
 
 No CLI, edit `claude_desktop_config.json`:
