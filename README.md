@@ -71,6 +71,28 @@ No CLI, edit `claude_desktop_config.json`:
 }
 ```
 
+### Warp
+
+Settings > Agents > MCP servers > **+ Add**, paste the same JSON shape as
+Claude Desktop. Or drop it into `~/.warp/.mcp.json` to auto-spawn on startup:
+
+```json
+{
+  "mcpServers": {
+    "x-search": {
+      "command": "npx",
+      "args": ["-y", "@sensef/x-search-mcp"],
+      "env": { "XAI_API_KEY": "xai-..." }
+    }
+  }
+}
+```
+
+Warp also reads `~/.codex/config.toml` and `~/.claude.json` — if you already
+configured x-search there, enable **Settings > Agents > MCP servers >
+Auto-spawn servers from third-party agents** and the same server shows up in
+Warp with no extra config.
+
 ## The `x_search` tool
 
 | Argument | Type | Description |
