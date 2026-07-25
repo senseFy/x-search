@@ -32,27 +32,16 @@ XAI_API_KEY=xai-... npx @sensef/x-search-mcp --smoke "what is xAI shipping today
 
 ## Client setup
 
-### Droid (`~/.factory/mcp.json`)
+### Droid
 
-```json
-{
-  "mcpServers": {
-    "x-search": {
-      "command": "npx",
-      "args": ["-y", "@sensef/x-search-mcp"],
-      "env": { "XAI_API_KEY": "xai-..." }
-    }
-  }
-}
+```bash
+droid mcp add x-search --env XAI_API_KEY=xai-... -- npx -y @sensef/x-search-mcp
 ```
 
-### Codex (`~/.codex/config.toml`)
+### Codex
 
-```toml
-[mcp_servers.x-search]
-command = "npx"
-args = ["-y", "@sensef/x-search-mcp"]
-env = { XAI_API_KEY = "xai-..." }
+```bash
+codex mcp add x-search --env XAI_API_KEY=xai-... -- npx -y @sensef/x-search-mcp
 ```
 
 ### Claude Code
@@ -61,7 +50,9 @@ env = { XAI_API_KEY = "xai-..." }
 claude mcp add x-search --env XAI_API_KEY=xai-... -- npx -y @sensef/x-search-mcp
 ```
 
-### Claude Desktop (`claude_desktop_config.json`)
+### Claude Desktop
+
+No CLI, edit `claude_desktop_config.json`:
 
 ```json
 {
